@@ -7,7 +7,20 @@ def main():
     print(frase)
 
     # Crie um template com placeholders
-    templ = "Você está assistindo ${0} com ${1}"
-    # Use o método substitute passando argumentos nomeados
+    templ = Template("Você está assistindo ${curso} com ${instrutora}")
 
+    # Use o método substitute passando argumentos nomeados
+    frase2 = templ.substitute(
+        curso = "Python Avançado",
+        instrutora = "Jéssica Temporal"
+    )
+    print(frase2)
+    
     # Use o método substitute com um dicionário
+    dados = {
+        "curso": "Python Avançado",
+        "instrutora": "Jéssica Temporal"
+    }
+    frase3 = templ.substitute(dados)
+    print(frase3)
+
